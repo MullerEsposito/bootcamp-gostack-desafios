@@ -15,6 +15,10 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
+    if (!['income', 'outcome'].includes(type)) {
+      throw new Error("Operation type isn't supported");
+    }
+
     const balance = this.transactionsRepository.getBalance();
 
     if (type === 'outcome' && balance.total < value) {
