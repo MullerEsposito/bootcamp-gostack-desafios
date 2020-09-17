@@ -19,7 +19,9 @@ export class CreateTableTransactions1599891916164 implements MigrationInterface 
                 },
                 {
                     name: 'value',
-                    type: 'int',
+                    type: 'decimal',
+                    precision: 10,
+                    scale: 2,
                 },
                 {
                     name: 'type',
@@ -57,7 +59,7 @@ export class CreateTableTransactions1599891916164 implements MigrationInterface 
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {
-        await queryRunner.dropForeignKey('transactions', 'category_id_fk');
+        await queryRunner.dropForeignKey('transactions', 'TransactionCategory');
         
         await queryRunner.dropTable('transactions');
     }
