@@ -1,0 +1,4 @@
+#Mon Feb 01 00:13:55 BRT 2021
+base.0=/home/muller/Programacao/Rocketseat/fundamentos-react-native/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
